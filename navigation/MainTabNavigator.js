@@ -134,7 +134,7 @@ export default createMaterialBottomTabNavigator({
 		FixedStack,
 		FastlaneStack,
 		TodoStack,
-		SettingsStack
+		//SettingsStack
 	},
 	{
 		initialRouteName: 'HomeStack',
