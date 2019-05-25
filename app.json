@@ -24,6 +24,7 @@
 		],
 		"ios": {
 			"supportsTablet": true
-		}
+		},
+		"description": "A small scrum board for private use"
 	}
 }
