@@ -11,7 +11,8 @@ export default class TodDosScreen extends React.Component {
 	render() {
 		return (
 			<View style={styles.listContainer}>
-				<TicketListPage asyncKey={TodDosScreen.asyncKey} noTicketsText={'Keine ToDos vorhanden'} />
+				<TicketListPage asyncKey={TodDosScreen.asyncKey} noTicketsText={'Keine ToDos vorhanden'}
+					ticketInputPlaceholder={'ToDo eingeben'} />
 			</View>
 		);
 	}

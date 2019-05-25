@@ -26,7 +26,7 @@ class TicketListItem extends React.Component {
 		return (
 			<View style={styles.listItemRow}>
 				<TextInput value={this.props.title} clearButtonMode={'always'} style={styles.listItemInput} onChangeText={this._onChangeItemText}
-					underlineColorAndroid={Colors.tintColor} placeholder={'Ticket eingeben'} autoFocus={this.props.focusInput} />
+					underlineColorAndroid={Colors.tintColor} placeholder={this.props.inputPlaceholder || 'Ticket eingeben'} autoFocus={this.props.focusInput} />
 				<View style={styles.listItemIconWrapper}>
 					<TouchableWithoutFeedback onPress={this._onDeleteIconPress} style={styles.listAddIcon}>
 						<Icon name={
@@ -84,6 +84,7 @@ export default class TicketList extends React.Component {
 			onChangeItemText={this.props.onChangeItem}
 			onPressDeleteItem={this.props.onDeleteItem}
 			title={item.title}
+			inputPlaceholder={this.props.ticketInputPlaceholder}
 			focusInput={this.state.focusLast && index === this.props.data.length - 1}
 		/>;
 	};

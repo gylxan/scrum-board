@@ -80,6 +80,7 @@ export default class TicketListPage extends React.Component {
 				onChangeItem={this._onTicketChange}
 				onDeleteItem={this._onTicketDelete}
 				noTicketsText={this.props.noTicketsText}
+				ticketInputPlaceholder={this.props.ticketInputPlaceholder}
 			/>
 		);
 	}
