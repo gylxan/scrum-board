@@ -5,6 +5,7 @@ import Icon from './Icon';
 import Colors from '../constants/Colors';
 
 class TicketListItem extends React.Component {
+	state = { isPressed: false };
 	/**
 	 * Triggered when the item text changes
 	 * @param {string} newValue The new value
@@ -19,6 +20,9 @@ class TicketListItem extends React.Component {
 	 * @private
 	 */
 	_onDeleteIconPress = () => {
+		this.setState({
+			isPressed: true
+		});
 		this.props.onPressDeleteItem(this.props.id);
 	};
 
@@ -29,10 +33,11 @@ class TicketListItem extends React.Component {
 					underlineColorAndroid={Colors.tintColor} placeholder={this.props.inputPlaceholder || 'Ticket eingeben'} autoFocus={this.props.focusInput} />
 				<View style={styles.listItemIconWrapper}>
 					<TouchableWithoutFeedback onPress={this._onDeleteIconPress} style={styles.listAddIcon}>
+
 						<Icon name={
 							Platform.OS === 'ios'
 								? 'ios-remove-circle-outline'
-								: 'md-remove-circle-outline'} />
+								: 'md-remove-circle-outline'} focused={this.state.isPressed} />
 					</TouchableWithoutFeedback>
 				</View>
 			</View>
@@ -108,7 +113,7 @@ export default class TicketList extends React.Component {
 					<Icon size={50} name={
 						Platform.OS === 'ios'
 							? 'ios-add-circle'
-							: 'md-add-circle'} />
+							: 'md-add-circle'} color={Colors.tintColor} />
 				</TouchableOpacity>
 			</View>
 		);

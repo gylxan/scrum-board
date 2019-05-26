@@ -23,8 +23,13 @@
 			"**/*"
 		],
 		"ios": {
-			"supportsTablet": true
+			"supportsTablet": true,
+			"bundleIdentifier": "com.gylxan.scrumboard"
 		},
-		"description": "A small scrum board for private use"
+		"description": "A small scrum board for private use",
+		"githubUrl": "https://github.com/gylxan/scrum-board",
+		"android": {
+			"package": "com.gylxan.scrumboard"
+		}
 	}
 }
